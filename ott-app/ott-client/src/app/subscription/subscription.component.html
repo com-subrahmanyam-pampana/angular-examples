@@ -1,0 +1,32 @@
+<div class="subscription-container">
+    <h2>Available Subscription Plans</h2>
+  
+    <!-- Show error message if something went wrong -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Show list of subscription plans -->
+    <div *ngIf="subscriptionPlans.length > 0">
+      <ul>
+        <li *ngFor="let plan of subscriptionPlans">
+          <h3>{{ plan.name }}</h3>
+          <p>Price: {{ plan.price }}</p>
+          
+          <!-- Display features -->
+          <div>
+            <h4>Features:</h4>
+            <ul>
+              <li *ngFor="let feature of plan.features">{{ feature }}</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Show a message if no plans are available -->
+    <div *ngIf="subscriptionPlans.length === 0">
+      <p>No subscription plans available at the moment.</p>
+    </div>
+  </div>
+  

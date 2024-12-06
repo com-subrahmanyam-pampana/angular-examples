@@ -3,10 +3,13 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { LoginComponent } from './app/login/login.component';
+import { SubscriptionComponent } from './app/subscription/subscription.component';
 import { importProvidersFrom } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';  
-bootstrapApplication(LoginComponent, {
+import { HttpClientModule } from '@angular/common/http';
+
+
+bootstrapApplication(SubscriptionComponent, {
   providers: [
     importProvidersFrom(RouterModule.forRoot(routes),HttpClientModule)
   ]
